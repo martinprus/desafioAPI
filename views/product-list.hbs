@@ -1,0 +1,30 @@
+<h1>Lista de productos</h1>
+
+{{#if productos}}
+  <table class="product-list">
+    <tr><th>Title</th><th>Price</th><th>Thumbnail</th></tr>
+
+    {{#each productos}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.price}}</td>
+        <td><img
+            src="{{this.thumbnail}}"
+            alt=""
+            height="50px"
+            width="50px"
+          /></td>
+      </tr>
+    {{/each}}
+
+  </table>
+{{else}}
+  <h2>No hay productos en la lista</h2>
+{{/if}}
+
+<a class="button" href="/"><button>Volver a la carga de productos</button> </a>
+
+<style>
+  table, th, td{ border: 2px solid; } .product-list{ width: 100%; }
+
+</style>
